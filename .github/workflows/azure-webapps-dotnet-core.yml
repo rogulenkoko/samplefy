@@ -2,7 +2,7 @@ name: Build and deploy ASP.Net Core app to an Azure Web App
 
 env:
   AZURE_WEBAPP_NAME: Samplefy
-  AZURE_WEBAPP_PACKAGE_PATH: './Samplefy'
+  AZURE_WEBAPP_PACKAGE_PATH: '.'
   DOTNET_VERSION: '7.0'
 
 on:
