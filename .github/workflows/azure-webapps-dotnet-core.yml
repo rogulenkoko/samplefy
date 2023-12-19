@@ -1,5 +1,8 @@
 name: Deploy Samplefy API to Azure
 
+env:
+  AZURE_WEBAPP_PACKAGE_PATH: './Samplefy/Samplefy.csproj'
+
 on:
   push:
     branches: [ "main" ]
@@ -16,7 +19,9 @@ jobs:
           dotnet-version: 7.0.x
           
       - name: Install Dependencies
-        run: dotnet restore ./Samplefy/Samplefy.csproj
+        run: dotnet restore ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
         
       - name: Build
-        run: dotnet build ./Samplefy/Samplefy.csproj --configuration Release --no-restore
+        run: dotnet build ${{ env.AZURE_WEBAPP_PACKAGE_PATH }} --configuration Release --no-restore
+        
+#      - name: Publish
