@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using Samplefy.Tools;
+using Samplefy.Core.Entities;
 
 namespace Samplefy.Controllers;
 
@@ -17,6 +17,6 @@ public class SongsController : ControllerBase
     [HttpGet(Name = "GetWeatherForecast")]
     public IEnumerable<Song> Get()
     {
-        return SongProvider.GetSongs();
+        return new List<Song>();
     }
 }
