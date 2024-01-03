@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Samplefy.Core.Entities;
 
-namespace Infrastructure.Data;
+namespace Samplefy.Infrastructure.Data;
 
 public class ApplicationDbContext : DbContext
 {

@@ -1,22 +1,29 @@
 using Microsoft.AspNetCore.Mvc;
-using Samplefy.Core.Entities;
+using Samplefy.Core.Repositories;
 
 namespace Samplefy.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("song")]
 public class SongsController : ControllerBase
 {
-    private readonly ILogger<SongsController> _logger;
+    private readonly IUnitOfWork _unitOfWork;
 
-    public SongsController(ILogger<SongsController> logger)
+    public SongsController(IUnitOfWork unitOfWork)
     {
-        _logger = logger;
+        _unitOfWork = unitOfWork;
     }
 
-    [HttpGet(Name = "GetWeatherForecast")]
-    public IEnumerable<Song> Get()
+    [HttpGet("{id}")]
+    public async Task<IActionResult> Get(Guid id)
     {
-        return new List<Song>();
+        var song = await _unitOfWork.Songs.Get(id);
+
+        if (song == null)
+        {
+            return NotFound();
+        }
+
+        return Ok(song);
     }
 }
