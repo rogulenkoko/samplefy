@@ -12,5 +12,5 @@ public class Song : BaseEntity
     
     public Album Album { get; set; }
     
-    public List<Artist> Artists { get; set; }
+    public List<Artist> Artists { get; set; } = new ();
 }

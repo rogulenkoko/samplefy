@@ -8,6 +8,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Samplefy.Core", "Samplefy.C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Samplefy.Infrastructure", "Samplefy.Infrastructure\Samplefy.Infrastructure.csproj", "{FD91886B-8611-4CCD-873B-3323182D7455}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Environment", "Environment", "{8E081106-F89A-47F9-9227-0D91B6A4D99C}"
+	ProjectSection(SolutionItems) = preProject
+		compose.yaml = compose.yaml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Samplefy.Playlists", "Samplefy.Playlists\Samplefy.Playlists.csproj", "{4743AED4-CBB3-4BDC-B875-B672C92D7817}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +37,9 @@ Global
 		{FD91886B-8611-4CCD-873B-3323182D7455}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD91886B-8611-4CCD-873B-3323182D7455}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD91886B-8611-4CCD-873B-3323182D7455}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4743AED4-CBB3-4BDC-B875-B672C92D7817}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4743AED4-CBB3-4BDC-B875-B672C92D7817}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4743AED4-CBB3-4BDC-B875-B672C92D7817}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4743AED4-CBB3-4BDC-B875-B672C92D7817}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
