@@ -1,4 +1,4 @@
-name: ci
+name: Build and Deploy Samplefy to Azure Container Apps
 
 on:
   push:
@@ -26,7 +26,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          dockerfile: Samplefy/Dockerfile
+          file: Samplefy/Dockerfile
           target: build
           load: true
       -
@@ -34,7 +34,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          dockerfile: Samplefy/Dockerfile
+          file: Samplefy/Dockerfile
           push: true
           target: final
           tags: ${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
