@@ -23,7 +23,7 @@ services:
     ports:
       - 5001:80
     depends_on: 
-#      - mongodb
+      - mongodb
       - samplefy
   db:
      image: postgres
@@ -46,18 +46,16 @@ services:
        timeout: 5s
        retries: 5
        
-#  mongodb:
-#    image: mongo
-#    restart: always
-#    volumes:
-#      - type: bind
-#        source: ./data
-#        target: /data/db
-#    environment:
-#      MONGO_INITDB_ROOT_USERNAME: samplefy
-#      MONGO_INITDB_ROOT_PASSWORD: test
-#    ports:
-#      - 27017:27017
+  mongodb:
+    image: mongo
+    restart: always
+    volumes:
+      - db-data:/var/lib/mongo/data
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: samplefy
+      MONGO_INITDB_ROOT_PASSWORD: test
+    ports:
+      - 27017:27017
 volumes:
  db-data:
 secrets:
